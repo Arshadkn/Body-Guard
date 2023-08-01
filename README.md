@@ -1,36 +1,12 @@
-
-
-
-
-<details><summary>Deploy To Heroku</summary>
-<p>
-<br>
-<a href="https://heroku.com/deploy?template=https://github.com/Azanpopz/Body-Guard">
-  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy To Heroku">
-</a>
-</p>
-</details>
-
-
-
 <p align="center">
-  <img src="https://telegra.ph/file/171925d184de01b3055dc.jpg" alt="DQ-The-File-Donor Logo">
+  <img src="https://telegra.ph/file/7f5f7906440c8eaa5afc6.jpg" alt="Ben-filter-Bot Logo">
 </p>
 <h1 align="center">
-  𝑫𝑸-𝑻𝒉𝒆-𝑭𝒊𝒍𝒆-𝑫𝒐𝒏𝒐𝒓 𝑩𝒐𝒕
+  BEN-FILTER-BOT
 </h1>
 
-![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=𝑊𝑒𝑙𝑐𝑜𝑚𝑒+𝑇𝑜+𝐷𝑄-𝑇ℎ𝑒-𝐹𝑖𝑙𝑒-𝐷𝑜𝑛𝑜𝑟!;𝐶𝑟𝑒𝑎𝑡𝑒𝑑+𝑏𝑦+Jᴏᴇʟ+ᠰ+TɢX!;𝐴+𝑠𝑖𝑚𝑝𝑙𝑒+𝑎𝑛𝑑+𝑝𝑜𝑤𝑒𝑟𝑓𝑢𝑙+𝐵𝑜𝑡!;𝐼𝑛𝑑𝑒𝑥𝑒𝑠+𝐹𝑖𝑙𝑒𝑠+𝑎𝑏𝑜𝑣𝑒+2𝐺𝐵;𝐴+𝐵𝑜𝑡+𝑤𝑖𝑡ℎ+𝑑𝑜𝑢𝑏𝑙𝑒+𝑏𝑢𝑡𝑡𝑜𝑛!;𝑆𝑡𝑎𝑟𝑡+𝑚𝑒𝑠𝑠𝑎𝑔𝑒+𝑤𝑖𝑡ℎ+𝑝𝑖𝑐!;𝐴𝑛𝑑+𝑚𝑜𝑟𝑒+𝑓𝑒𝑎𝑡𝑢𝑟𝑒𝑠!)
+![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=𝑊𝑒𝑙𝑐𝑜𝑚𝑒+𝑇𝑜+TT-Bot;𝐴+𝑠𝑖𝑚𝑝𝑙𝑒+𝑎𝑛𝑑+𝑝𝑜𝑤𝑒𝑟𝑓𝑢𝑙+𝐵𝑜𝑡!;𝐼𝑛𝑑𝑒𝑥𝑒𝑠+𝐹𝑖𝑙𝑒𝑠+𝑎𝑏𝑜𝑣𝑒+2𝐺𝐵;𝐴+𝐵𝑜𝑡+𝑤𝑖𝑡ℎ+𝑑𝑜𝑢𝑏𝑙𝑒+𝑏𝑢𝑡𝑡𝑜𝑛!;𝑆𝑡𝑎𝑟𝑡+𝑚𝑒𝑠𝑠𝑎𝑔𝑒+𝑤𝑖𝑡ℎ+𝑝𝑖𝑐!;𝐴𝑛𝑑+𝑚𝑜𝑟𝑒+𝑓𝑒𝑎𝑡𝑢𝑟𝑒𝑠!)
 </p>
-
-<a href="https://github.com/Joelkb/DQ-The-File-Donor/stargazers"><img src="https://img.shields.io/github/stars/Joelkb/DQ-The-File-Donor?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
-<a href="https://github.com/Joelkb/DQ-The-File-Donor/network/members"> <img src="https://img.shields.io/github/forks/Joelkb/DQ-The-File-Donor?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
-<a href="https://github.com/Joelkb/DQ-The-File-Donor"> <img src="https://img.shields.io/github/repo-size/Joelkb/DQ-The-File-Donor?color=skyblue&logo=github&logoColor=blue&style=for-the-badge" /></a>   
-<a href="https://github.com/Joelkb/DQ-The-File-Donor/commits/kdbotz"> <img src="https://img.shields.io/github/last-commit/Joelkb/DQ-The-File-Donor?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
-<a href="https://github.com/Joelkb/DQ-The-File-Donor"> <img src="https://img.shields.io/github/contributors/Joelkb/DQ-The-File-Donor?color=skyblue&logo=github&logoColor=blue&style=for-the-badge" /></a>
-<a href="https://github.com/Joelkb/DQ-The-File-Donor/blob/master/LICENSE"> <img src="https://img.shields.io/badge/License- GPL 2.0 license -blueviolet?style=for-the-badge" alt="License" /> </a>
-<a href="https://www.python.org/"> <img src="https://img.shields.io/badge/Written%20in-Python-skyblue?style=for-the-badge&logo=python" alt="Python" /> </a>
-<a href="https://pypi.org/project/Pyrogram/"> <img src="https://img.shields.io/pypi/v/pyrogram?color=white&label=pyrogram&logo=python&logoColor=blue&style=for-the-badge" /></a>
 
 ## 𝐹𝑒𝑎𝑡𝑢𝑟𝑒𝑠
 - [x] 𝐼𝑀𝐷𝐵 𝑇𝑒𝑚𝑝𝑙𝑎𝑡𝑒 𝑆𝑒𝑡
@@ -71,7 +47,7 @@
 - [x] 𝐴𝑢𝑡𝑜 𝐷𝑒𝑙𝑒𝑡𝑒
 - [x] 𝐴𝑛𝑑 𝑀𝑜𝑟𝑒...
 
-<b>𝑇𝑜 𝑘𝑛𝑜𝑤 𝑎𝑏𝑜𝑢𝑡 𝑎𝑙𝑙 𝑓𝑒𝑎𝑡𝑢𝑟𝑒𝑠, 𝐽𝑜𝑖𝑛 𝑜𝑢𝑟 <a href='https://telegram.me/DQ_The_File_Donor_Updates'>𝑢𝑝𝑑𝑎𝑡𝑒𝑠 𝑐ℎ𝑎𝑛𝑛𝑒𝑙</a>.</b>
+<b>𝑇𝑜 𝑘𝑛𝑜𝑤 𝑎𝑏𝑜𝑢𝑡 𝑎𝑙𝑙 𝑓𝑒𝑎𝑡𝑢𝑟𝑒𝑠, 𝐽𝑜𝑖𝑛 𝑜𝑢𝑟 <a href='https://telegram.me/TeamHMT_Bots'>𝑢𝑝𝑑𝑎𝑡𝑒𝑠 𝑐ℎ𝑎𝑛𝑛𝑒𝑙</a>.</b>
 
 ## 𝐶𝑜𝑚𝑚𝑎𝑛𝑑𝑠
 ```
@@ -124,40 +100,57 @@
 * `CHANNELS`: Username or ID of channel or group. Separate multiple IDs by space
 * `ADMINS`: Username or ID of Admin. Separate multiple Admins by space
 * `DATABASE_URI`: [mongoDB](https://www.mongodb.com) URI. Get this value from [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/1G1XwEOnxxo)
-* `DATABASE_NAME`: Name of the database in [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/1G1XwEOnxxo)
+* `DATABASE_NAME`: Name of the database in [mongoDB](https://www.mongodb.com).
 * `LOG_CHANNEL` : A channel to log the activities of bot. Make sure bot is an admin in the channel.
 ### Optional Variables
 * `PICS`: Telegraph links of images to show in start message.( Multiple images can be used separated by space )
 * `FILE_STORE_CHANNEL`: Channel from were file store links of posts should be made.Separate multiple IDs by space
-* Check [info.py](https://github.com/Joelkb/DQ-The-File-Donor/blob/master/info.py) for more optional variables
+* Check [info.py](https://github.com/TeamHMT/Auto-search-tamil-bot/blob/main/info.py) for more optional variables
 
 
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=https://github.com/azanhelpdesk/DQ-_TOM">
+<a href="https://heroku.com/deploy?template=https://github.com/TeamHMT/Auto-search-tamil-bot">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy To Heroku">
-</a>
-</p>
-</details>
-<details><summary>Deploy To Heroku Via Bot</summary>
-<p>
-<br>
-<a href="https://telegram.dog/XTZ_HerokuBot?start=Sm9lbGtiL0RRLXRoZS1maWxlLWRvbm9yIG1hc3Rlcg">
-  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy Via Heroku Bot">
 </a>
 </p>
 </details>
 
 <details><summary>Deploy To Koyeb</summary>
+<br>
 <b>The fastest way to deploy the application is to click the Deploy to Koyeb button below.</b>
+<br>
+<br>
 
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/Joelkb/DQ-The-FIle-Donor&branch=web&name=dqthefiledonor)
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/TeamHMT/Auto-search-tamil-bot&branch=main&name=Auto-search-tamil-bot)
 </details>
 
 <details><summary>Deploy To Render</summary>
 <br>
-<a href="https://render.com/deploy?repo=https://github.com/Joelkb/DQ-the-file-donor/tree/web">
+<b>
+Use these commands:
+<br>
+<br>
+• Build Command: <code>pip3 install -U -r requirements.txt</code>
+<br>
+<br>
+• Start Command: <code>python3 bot.py</code>
+<br>
+<br>
+Go to https://uptimerobot.com/ and add a monitor to keep your bot alive.
+<br>
+<br>
+Use these settings when adding a monitor:</b>
+<br>
+<br>
+<img src="https://telegra.ph/file/a79a156e44f43c9833b50.jpg" alt="render template">
+<br>
+<br>
+<b>Click on the below button to deploy directly to render ↓</b>
+<br>
+<br>
+<a href="https://render.com/deploy?repo=https://github.com/TeamHMT/Auto-search-tamil-bot/tree/main">
 <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
 </a>
 </details>
@@ -165,7 +158,7 @@
 <details><summary>Deploy To VPS</summary>
 <p>
 <pre>
-git clone https://github.com/Joelkb/DQ-The-File-Donor
+git clone https://github.com/TeamHMT/Auto-search-tamil-bot
 # Install Packages
 pip3 install -U -r requirements.txt
 Edit info.py with variables as given below then run bot
@@ -180,6 +173,8 @@ python3 bot.py
 * [![EvaMaria-Devs](https://img.shields.io/static/v1?label=EvaMaria&message=devs&color=critical)](https://telegram.dog/EvaMariaDevs)
 * [![Joel-TGX](https://img.shields.io/static/v1?label=Jᴏᴇʟ+ᠰ+TɢX&message=Github&color=critical)](https://github.com/Joelkb)
 * [![Contact](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://telegram.me/creatorbeatz)
+* [![TTBots](https://img.shields.io/static/v1?label=Tᴛ+Bᴏᴛs&message=Github&color=critical)](https://github.com/TeamHMT)
+* [![Contact](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://telegram.me/TeamHMT_Bots)
 
 ## Thanks to 
  - Thanks To Dan For His Awesome [Library](https://github.com/pyrogram/pyrogram)
@@ -187,12 +182,13 @@ python3 bot.py
  - Thanks To [Trojanz](https://github.com/trojanzhex) for Their Awesome [Unlimited Filter Bot](https://github.com/TroJanzHEX/Unlimited-Filter-Bot) And [AutoFilterBoT](https://github.com/trojanzhex/auto-filter-bot)
  - Thanks To All Everyone In This Journey
  - Thanks To [EvamariaTG](https://raw.githubusercontent.com/EvamariaTG) for their awesome [EvaMaria Bot](https://raw.githubusercontent.com/EvamariaTG/EvaMaria)
- - Thanks To [Joelkb](https://github.com/Joelkb) who have edited and modified this repo as now it is. (It's me 😂)
+ - Thanks To [Joelkb](https://github.com/Joelkb) for their awesome repo [DqFileDonor](https://github.com/Joelkb/DQ-the-file-donor)
+ - Thanks To [TTBots](https://github.com/TeamHMT) who have edited and modified this repo as now it is. (It's me 😂)
 
 ## Note 🏷️
  - <b>Importing this repo instead of forking is strictly prohibited 🚫 Kindly fork and edit as your wish (Must Give Credits for devs) 🙃</b>
  - <b>If you find any bugs or errors, report it to the developer.</b>
-* [![Contact Developer](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://telegram.me/creatorbeatz)
+* [![Contact Developer](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://telegram.me/TeamHMT_Bots)
 
 [Note To A So Called Dev](https://telegram.dog/subin_works/203): 
 
@@ -208,5 +204,9 @@ Selling The Codes To Other People For Money Is *Strictly Prohibited*.
 This is an attempt to create a clone of a BOAT made out of [banana trees 🌳](https://telegram.dog/GetTGLink/4187)
 
 [![For Vaza](https://telegra.ph/file/e743b0c8a04252774bac2.jpg)](https://telegra.ph/file/98342dc186fd7484cba91.mp4 "Oru Kootam Vazhakalk samarpikkunnu")
-
-
+pip3 install -U -r requirements.txt
+Edit info.py with variables as given below then run bot
+python3 bot.py
+</pre>
+</p>
+</details>
