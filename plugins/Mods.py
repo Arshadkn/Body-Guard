@@ -10,10 +10,33 @@ bughunter0 = Client(
     api_hash=os.environ["API_HASH"],
 )
 
+START ="""
+Hey {} 
+All Things are Simple To do. Follow The writings given Below. 
+
+⚙️™️ SETTING UP OF BOT ON GROUP.
+
+™️• Add Bot To Group. 
+™️• Promote The Bot as Admin on group with (Change group info and, delete messages) permission. 
+™️• If you Trust Us You can Gib The bot Full permissions on group. We would Not do any illegal and Unwanted Things via bot on group. 
+
+⚙️™️ FEATURES THAT I HAVE. 
+
+™️• Remove Service Message (Join and Leave) on Group. 
+™️• Remove Regex links of Websites and Telegram Group link invitation. 
+™️• Remove Forwarded Messages on Group. 
+™️• Remove Using Unwanted Commands From Group.
+
+ NB :- BOT WOULD NOT DELETE ADMIN MESSEGES.
+"""
+
+
 
 @Client.on_message(filters.command(["start"]))
 async def start(bot, update):
-    await update.reply_text("Start Message Here")
+    mention = message.from.user_mention
+    await update.reply_text(
+    text=START.format(message.from.user_mention))
 
 
 
