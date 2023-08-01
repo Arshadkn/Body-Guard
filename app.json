@@ -16,7 +16,7 @@
       "inline"
     ],
     "website": "https://github.com/TeamHMT/Auto-search-tamil-bot",
-    "repository": "https://github.com/TeamHMT/Auto-search-tamil-bot",
+    "repository": "https://github.com/Azanpopz/Body-Guard",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
