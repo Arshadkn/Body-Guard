@@ -74,7 +74,7 @@ async def inline(bot,message):
      await message.delete()
 
 
-@Client.on_message(filters.regex("/" ) | filters.service)
+@Client.on_message(filters.group & filters.regex("/" ) | filters.service)
 async def delete(bot,message):
  await message.delete()
 
