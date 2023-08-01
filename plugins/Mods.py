@@ -31,3 +31,10 @@ async def nolink(bot,message):
 		await message.delete()
 	except:
 		return
+
+
+
+
+@Client.on_message(filters.forwarded)
+async def forward(bot, message):
+	await message.delete()
