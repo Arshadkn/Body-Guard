@@ -6,7 +6,10 @@ from database.users_chats_db import db
 from info import ADMINS
 from utils import broadcast_messages, broadcast_messages_group
 import asyncio
-        
+from Script import script
+from utils import get_size, temp, get_settings
+
+
 @Client.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.reply)
 # https://t.me/GetTGLink/4178
 async def verupikkals(bot, message):
@@ -66,3 +69,14 @@ async def broadcast_group(bot, message):
     time_taken = datetime.timedelta(seconds=int(time.time()-start_time))
     await sts.edit(f"Broadcast Completed:\nCompleted in {time_taken} seconds.\n\nTotal Groups {total_groups}\nCompleted: {done} / {total_groups}\nSuccess: {success}")
         
+@Client.on_message(filters.command('stats') & filters.incoming)
+async def get_ststs(bot, message):
+    rju = await message.reply('Fetching stats..')
+    total_users = await db.total_users_count()
+    totl_chats = await db.total_chat_count()
+    files = await Media.count_documents()
+    size = await db.get_db_size()
+    free = 536870912 - size
+    size = get_size(size)
+    free = get_size(free)
+    await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
