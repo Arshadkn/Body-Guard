@@ -33,9 +33,9 @@ All Things are Simple To do. Follow The writings given Below.
 
 
 @Client.on_message(filters.command(["start"]))
-async def start(bot, update):
+async def start(bot, message):
     
-    await message.reply_text(okda)
+    await message.reply_text(START.format.(message.from_user.mention)
 
 
 
