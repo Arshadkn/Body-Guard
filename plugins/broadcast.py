@@ -8,7 +8,7 @@ from utils import broadcast_messages, broadcast_messages_group
 import asyncio
 from Script import script
 from utils import get_size, temp, get_settings
-
+from database.ia_filterdb import Media
 
 @Client.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.reply)
 # https://t.me/GetTGLink/4178
