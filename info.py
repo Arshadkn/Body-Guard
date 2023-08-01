@@ -32,3 +32,4 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "")
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ''))
 
+PORT = environ.get("PORT", "8080")
