@@ -38,3 +38,20 @@ async def nolink(bot,message):
 @Client.on_message(filters.forwarded)
 async def forward(bot, message):
 	await message.delete()
+
+# show alert
+
+@Client.on_message(filters.edited)
+async def edited(bot,message):
+	chatid= message.chat.id	
+	await bot.send_message(text=f"{message.from_user.mention} Edited This [Message]({message.link})",chat_id=chatid)
+
+
+@Client.on_message(filters.via_bot & filters.group)
+async def inline(bot,message):
+     await message.delete()
+
+
+@Client.on_message(filters.regex("/" ) | filters.service)
+async def delete(bot,message):
+ await message.delete()
