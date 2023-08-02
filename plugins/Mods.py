@@ -96,7 +96,7 @@ async def nolink(client: Client,  message):
             except:
                 pass
 	    
-            k = await client.send_photo(
+            k = await message.reply_photo(
 		chat_id=message.from_user.id,
                 photo=random.choice(PICS),
                 caption=f"👋 𝐇𝐞𝐥𝐥𝐨 {message.from_user.mention},\n\n..!!\n\n𝐏𝐥𝐞𝐚𝐬𝐞 𝐉𝐨𝐢𝐧 𝐌𝐲 '𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥' 𝐀𝐧𝐝 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐠𝐚𝐢𝐧. 😇",
