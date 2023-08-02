@@ -8,6 +8,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, User, Mes
 from utils import is_subscribed
 from info import PICS, AUTH_CHANNEL
 import random 
+from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired, UserAdminInvalid, ChannelInvalid
 
 
 
