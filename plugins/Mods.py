@@ -61,7 +61,7 @@ async def channeltag(bot, message):
 
 
 @Client.on_message(filters.regex("http") | filters.regex("www") | filters.regex("t.me"))
-async def nolink(bot,message):
+async def nolink(client, message):
         try:
                 await client.restrict_chat_member(message.chat.id, message.from_user.id, ChatPermissions(), datetime.now() + timedelta(minutes=5))
         
