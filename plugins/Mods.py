@@ -47,6 +47,16 @@ All Things are Simple To do. Follow The writings given Below.
 """
 invite_link = "https://t.me/testpubliconly"
 
+
+@Client.on_message(filters.command(["mchat"]))
+async def start(bot, message):
+    chat_id = message.chat.id
+    await bot.get_history_count(chat_id=messege.chat.id)
+
+
+
+
+
 @Client.on_message(filters.command(["start"]))
 async def start(bot, message):
     
