@@ -76,13 +76,14 @@ async def nolink(client: Client,  message):
      
                 	
         if AUTH_CHANNEL and not await is_subscribed(client, message):
+	    
             try:
                 invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
             except ChatAdminRequired:
                 logger.error("Make sure Bot is admin in Forcesub channel")
                 return
             buttons = [[
-                InlineKeyboardButton("📢 Updates Channel 📢", url=invite_link.invite_link)
+                InlineKeyboardButton("📢 Updates Channel 📢", url=content.invite_link)
             ],[
                 InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
             ]]
