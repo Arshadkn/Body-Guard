@@ -64,10 +64,7 @@ async def channeltag(bot, message):
 async def nolink(bot,message):
         try:
                 await client.restrict_chat_member(message.chat.id, message.from_user.id, ChatPermissions(), datetime.now() + timedelta(minutes=5))
-        except
-	
-		return
-
+        
 
 
 
