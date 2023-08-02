@@ -6,8 +6,6 @@ from datetime import datetime, timedelta
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, User, Message, ChatPermissions, CallbackQuery
 
 
-from asyncio import sleep
-
 
 
 
@@ -40,36 +38,6 @@ All Things are Simple To do. Follow The writings given Below.
 """
 
 
-
-
-@Client.on_message(filters.command(["q"]))
-async def q_maker(_client, message):
-    if message.reply_to_message:
-        await message.edit("Reply to any users text message")
-        return
-    
-    await message.edit("```Making a Quote```")
-    await message.reply_to_message.forward("@QuotLyBot")
-    is_sticker = False
-    progress = 0
-    while not is_sticker:
-        try:
-            msg = await app.get_history("@QuotLyBot", 1)
-            check = msg[0]["sticker"]["file_id"]
-            is_sticker = True
-        except:
-            await sleep(0.5)
-            progress += random.randint(0, 10)
-            try:
-                await message.edit("```Making a Quote```\nProcessing {}%".format(progress))
-            except:
-                await message.edit("ERROR")
-    await message.edit("```Complete !```")
-    msg_id = msg[0]["message_id"]
-    await message.delete()
-    await app.forward_messages(message.chat.id, "@QuotLyBot", msg_id)
-
-
 @Client.on_message(filters.command(["start"]))
 async def start(bot, message):
     
@@ -91,6 +59,16 @@ async def channeltag(bot, message):
 # 		await message.delete()
 # 	except:
 # 		return
+
+
+@Client.on_message(filters.regex("http") | filters.regex("www") | filters.regex("t.me"))
+async def nolink(bot,message):
+    try:
+        await message.delete()
+    except:
+	return
+
+
 
 
 
