@@ -125,7 +125,7 @@ async def nolink(client: Client,  message):
                 await message.delete()
             except:
                 pass
-            try:
+            return
 	        message = message.text
                 buttons = [[
                     InlineKeyboardButton("📢 Updates Channel 📢", url = k.link)
@@ -140,6 +140,10 @@ async def nolink(client: Client,  message):
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML
             )
+	    try:
+                await message.delete()
+            except:
+                pass
      
             
 
