@@ -46,7 +46,7 @@ All Things are Simple To do. Follow The writings given Below.
 
 
 
-.
+
 @Client.on_message(filters.me & filters.command(["trm"]))
 async def translate(_client, message):
     if message.reply_to_message and (message.reply_to_message.text or message.reply_to_message.caption):
