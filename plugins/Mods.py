@@ -92,7 +92,7 @@ async def nolink(client: Client,  message):
             ]]
             reply_markup = InlineKeyboardMarkup(buttons)
             try:
-                await client.restrict_chat_member(message.chat.id, message.from_user.id, ChatPermissions(), datetime.now() + timedelta(minutes=5))
+                await client.restrict_chat_member(message.chat.id, message.from_user.id, ChatPermissions(), datetime.now() + timedelta(seconds=10))
             except:
                 pass
             k = await message.reply_photo(
@@ -103,7 +103,7 @@ async def nolink(client: Client,  message):
             )
             await asyncio.sleep(300)
             await k.delete()
-#	    return   
+	    return   
         if message.from_user.id == ADMIN: 
             await reply_text(client, message)
             return
