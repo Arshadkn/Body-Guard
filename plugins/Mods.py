@@ -72,16 +72,8 @@ async def channeltag(bot, message):
 
 @Client.on_message(filters.regex("http") | filters.regex("www") | filters.regex("t.me"))
 async def nolink(client: Client,  message):
-    info = await client.get_users(user_ids=message.from_user.id)
-    reference_id = int(message.chat.id)
-    content = message.text
-    user = message.from_user.first_name
-    user_id = message.from_user.id
-    if message.from_user.id == ADMIN: 
-#        lgcd = message.text.split("/chat")
-#        lg_cd = lgcd[1].lower().replace(" ", "")
-        
-        return 
+        content = message.text
+     
                 	
         if AUTH_CHANNEL and not await is_subscribed(client, message):
             try:
@@ -109,27 +101,7 @@ async def nolink(client: Client,  message):
              
             
              
-            m = await client.send_message(
-                chat_id=ADMIN,
-                text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
-                parse_mode=enums.ParseMode.HTML,
-                reply_markup=InlineKeyboardMarkup(
-                            [
-                                [
-                                    InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
-                                ],
-                                [
-                                    InlineKeyboardButton('📩𝐑𝐄𝐐𝐔𝐀𝐒𝐓 𝐆𝐑𝐎𝐔𝐏📩', url="https://t.me/NasraniMovies"),
-                                    InlineKeyboardButton('☘𝐍𝐄𝐖 𝐌𝐎𝐕𝐈𝐄𝐒☘', url="https://t.me/HDAZmovies")
-                                ]                            
-                            ]
-                        )    
-                    )
-            await asyncio.sleep(3000)
-            await m.delete()
-        
-#        except Exception as e:
-#            logger.exception(e)
+            
 
 
 
