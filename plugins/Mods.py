@@ -78,15 +78,9 @@ async def nolink(client: Client,  message):
     if message.from_user.id == ADMIN: 
 #        lgcd = message.text.split("/chat")
 #        lg_cd = lgcd[1].lower().replace(" ", "")
-        k = await message.reply(f"You'r anonymous admin! Sorry you can't get '{search}' from here.\nYou can get '{search}' from bot inline search.")
-        await asyncio.sleep(30)
-        await k.delete()
-        try:
-                await message.delete()
-            except:
-                pass
-            return
-	
+        
+        return 
+                	
         if AUTH_CHANNEL and not await is_subscribed(client, message):
             try:
                 invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
