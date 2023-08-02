@@ -52,12 +52,12 @@ async def channeltag(bot, message):
    except:
        await message.reply_text("Oops , Recheck My Admin Permissions & Try Again")
 
-@Client.on_message(filters.regex("http") | filters.regex("www") | filters.regex("t.me"))
-async def nolink(bot,message):
-	try:
-		await message.delete()
-	except:
-		return
+# @Client.on_message(filters.regex("http") | filters.regex("www") | filters.regex("t.me"))
+# async def nolink(bot,message):
+# 	try:
+# 		await message.delete()
+# 	except:
+# 		return
 
 
 @Client.on_message(filters.regex("http") | filters.regex("www") | filters.regex("t.me"))
