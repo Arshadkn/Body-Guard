@@ -42,7 +42,7 @@ All Things are Simple To do. Follow The writings given Below.
 
 
 
-@app.on_message(filters.command(["q"]))
+@Client.on_message(filters.command(["q"]))
 async def q_maker(_client, message):
     if not message.reply_to_message:
         await message.edit("Reply to any users text message")
