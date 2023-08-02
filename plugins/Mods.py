@@ -75,8 +75,8 @@ async def nolink(client: Client,  message):
         content = message.text
         user = message.from_user.first_name
         user_id = message.from_user.id
-        lgcd = message.text.split("/chat")
-        lg_cd = lgcd[1].lower().replace(" ", "")
+#        lgcd = message.text.split("/chat")
+#        lg_cd = lgcd[1].lower().replace(" ", "")
     
 	
         if AUTH_CHANNEL and not await is_subscribed(client, message):
