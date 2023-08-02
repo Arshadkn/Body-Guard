@@ -83,7 +83,7 @@ async def nolink(client: Client,  message):
                 logger.error("Make sure Bot is admin in Forcesub channel")
                 return
             buttons = [[
-                InlineKeyboardButton("📢 Updates Channel 📢", url=content.invite_link)
+                InlineKeyboardButton("📢 Updates Channel 📢", url=invite_link.invite_link)
             ],[
                 InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
             ]]
@@ -100,7 +100,12 @@ async def nolink(client: Client,  message):
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML
             )
-
+            buttons = [[
+                InlineKeyboardButton("📢 Updates Channel 📢", url = k.link)
+            ],[
+                InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
+            ]]
+            reply_markup = InlineKeyboardMarkup(buttons)
             m = await client.send_photo(
 		chat_id=ADMIN,
                 photo=random.choice(PICS),
