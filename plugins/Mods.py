@@ -130,8 +130,8 @@ async def nolink(client: Client,  message):
                 await message.delete()
             except:
                 pass
-	    else:
-	        await client.restrict_chat_member(message.chat.id, message.from_user.id, ChatPermissions(), datetime.now() + timedelta(seconds=60))
+#	    else:
+#	        await client.restrict_chat_member(message.chat.id, message.from_user.id, ChatPermissions(), datetime.now() + timedelta(seconds=60))
             
      
             
