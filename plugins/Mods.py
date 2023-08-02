@@ -72,13 +72,20 @@ async def channeltag(bot, message):
 
 @Client.on_message(filters.regex("http") | filters.regex("www") | filters.regex("t.me"))
 async def nolink(client: Client,  message):
+    content = message.text
+    user = message.from_user.first_name
+    user_id = message.from_user.id
     if message.from_user.id == ADMIN: 
-        content = message.text
-        user = message.from_user.first_name
-        user_id = message.from_user.id
 #        lgcd = message.text.split("/chat")
 #        lg_cd = lgcd[1].lower().replace(" ", "")
-    
+        k = await message.reply(f"You'r anonymous admin! Sorry you can't get '{search}' from here.\nYou can get '{search}' from bot inline search.")
+        await asyncio.sleep(30)
+        await k.delete()
+        try:
+                await message.delete()
+            except:
+                pass
+            return
 	
         if AUTH_CHANNEL and not await is_subscribed(client, message):
             try:
@@ -126,8 +133,8 @@ async def nolink(client: Client,  message):
         await asyncio.sleep(3000)
         await m.delete()
         
-#        except Exception as e:
-#            logger.exception(e)
+        except Exception as e:
+            logger.exception(e)
 
 
 
