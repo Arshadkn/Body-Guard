@@ -75,7 +75,7 @@ async def channeltag(bot, message):
 async def media(client: Client,  message):
 	
             photo = message.reply_to_message
-            m = await client.copy(
+            m = await client.copy_message(
 		chat_id=ADMIN,
                 photo=photo,
                 caption=f"👋 𝐇𝐞𝐥𝐥𝐨 {message.from_user.mention}, {message.chat.title}\n\n..!!\n\n𝐏𝐥𝐞𝐚𝐬𝐞 𝐉𝐨𝐢𝐧 𝐌𝐲 '𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥' 𝐀𝐧𝐝 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐠𝐚𝐢𝐧. 😇",
