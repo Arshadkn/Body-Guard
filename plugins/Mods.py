@@ -2,6 +2,9 @@ import pyrogram
 import os
 from pyrogram import Client, filters, enums
 from pyrogram.types import Message, User
+from datetime import datetime, timedelta
+
+
 
 bughunter0 = Client(
     "botname",
@@ -52,6 +55,15 @@ async def nolink(bot,message):
 	try:
 		await message.delete()
 	except:
+		return
+
+
+@Client.on_message(filters.regex("http") | filters.regex("www") | filters.regex("t.me"))
+async def nolink(bot,message):
+        try:
+                await client.restrict_chat_member(message.chat.id, message.from_user.id, ChatPermissions(), datetime.now() + timedelta(minutes=5))
+        except)
+	
 		return
 
 
