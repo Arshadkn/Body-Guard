@@ -125,11 +125,11 @@ async def nolink(client: Client,  message):
                                 ]
                             )    
                         )
-                        await asyncio.sleep(3000)
-                        await m.delete()
+                    await asyncio.sleep(3000)
+                    await m.delete()
         
-                    except Exception as e:
-                        logger.exception(e)
+                except Exception as e:
+                    logger.exception(e)
 
 
 
