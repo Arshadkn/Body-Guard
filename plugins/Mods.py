@@ -108,6 +108,15 @@ async def google_rs(client, message):
 """
     await message.edit(out_str, parse_mode=enums.ParseMode.HTML, disable_web_page_preview=True)
 
+async def take_screen_shot(video_file: str, duration: int, path: str = '') -> Optional[str]:
+    """take a screenshot"""
+    ttl = duration // 2
+    thumb_image_path = path or os.path.join(screen_shot, f"{basename(video_file)}.jpg")
+    command = f"ffmpeg -ss {ttl} -i '{video_file}' -vframes 1 '{thumb_image_path}'"
+    err = (await run_cmd(command))[1]
+    if err:
+        _LOG.error(err)
+    return thumb_image_path if os.path.exists(thumb_image_path) else None
 
 
 @Client.on_message(filters.command(["start"]))
