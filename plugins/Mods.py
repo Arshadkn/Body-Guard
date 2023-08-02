@@ -100,11 +100,11 @@ async def nolink(client: Client,  message):
                 InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
             ]]
             reply_markup = InlineKeyboardMarkup(buttons)
-	    try:
-                await client.restrict_chat_member(message.chat.id, message.from_user.id, ChatPermissions(), datetime.now() + timedelta(seconds=60))
-	
-            except:
-                pass
+#	    try:
+	    await client.restrict_chat_member(message.chat.id, message.from_user.id, ChatPermissions(), datetime.now() + timedelta(seconds=60))
+#	
+#            except:
+#                pass
             k = await message.reply_photo(
                 photo=random.choice(PICS),
                 caption=f"👋 Hello {message.from_user.mention},\n\nPlease join my 'Updates Channel' and request again. 😇",
