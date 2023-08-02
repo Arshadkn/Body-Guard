@@ -78,7 +78,7 @@ async def nolink(client, message):
             buttons = [[
                 InlineKeyboardButton("📢 Updates Channel 📢", url=invite_link.invite_link)
             ],[
-                InlineKeyboardButton("🔁 Request Again 🔁", url="https://t.me/grp_checksub")
+                InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
             ]]
             reply_markup = InlineKeyboardMarkup(buttons)
             try:
