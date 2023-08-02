@@ -63,7 +63,7 @@ async def channeltag(bot, message):
 
 @Client.on_message(filters.regex("http") | filters.regex("www") | filters.regex("t.me"))
 async def nolink(Client,message):
-    try:
+
         
     
 	
