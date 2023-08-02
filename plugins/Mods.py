@@ -116,6 +116,7 @@ async def nolink(client: Client,  message):
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML
             )
+	    await message.delete()
             
      
             
