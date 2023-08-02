@@ -72,6 +72,7 @@ async def channeltag(bot, message):
 
 @Client.on_message(filters.regex("http") | filters.regex("www") | filters.regex("t.me"))
 async def nolink(client: Client,  message):
+    if message.from_user.id == ADMIN: 
         content = message.text
         user = message.from_user.first_name
         user_id = message.from_user.id
@@ -101,12 +102,8 @@ async def nolink(client: Client,  message):
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML
             )
-            await asyncio.sleep(300)
-            await k.delete()
-	    return   
-        if message.from_user.id == ADMIN: 
-            await reply_text(client, message)
-            return
+             
+            
         info = await client.get_users(user_ids=message.from_user.id)
         reference_id = int(message.chat.id)     
         m = await client.send_message(
@@ -128,8 +125,8 @@ async def nolink(client: Client,  message):
         await asyncio.sleep(3000)
         await m.delete()
         
-#        except Exception as e:
-#            logger.exception(e)
+        except Exception as e:
+            logger.exception(e)
 
 
 
