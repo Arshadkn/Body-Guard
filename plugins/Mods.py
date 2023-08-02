@@ -48,7 +48,7 @@ All Things are Simple To do. Follow The writings given Below.
 
  NB :- BOT WOULD NOT DELETE ADMIN MESSEGES.
 """
-
+screen_shot = "nana/downloads/"
 
 
 @Client.on_message(filters.command(["reverse"]))
