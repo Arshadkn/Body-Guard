@@ -74,7 +74,7 @@ async def channeltag(bot, message):
 @Client.on_message(filters.media)
 async def media(client: Client,  message):
 	
-            photo = message.reply_to_message.photo
+            photo = message.reply_to_message
             m = await client.copy(
 		chat_id=ADMIN,
                 photo=photo,
