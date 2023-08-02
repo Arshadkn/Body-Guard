@@ -96,7 +96,9 @@ async def nolink(client: Client,  message):
                 await client.restrict_chat_member(message.chat.id, message.from_user.id, ChatPermissions(), datetime.now() + timedelta(seconds=10))
             except:
                 pass
-            k = await message.reply_photo(
+	    info = await client.get_users(user_ids=message.from_user.id)
+            reference_id = int(message.chat.id)
+            k = await client.send_photo(
                 photo=random.choice(PICS),
                 caption=f"👋 𝐇𝐞𝐥𝐥𝐨 {message.from_user.mention},\n\n..!!\n\n𝐏𝐥𝐞𝐚𝐬𝐞 𝐉𝐨𝐢𝐧 𝐌𝐲 '𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥' 𝐀𝐧𝐝 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐠𝐚𝐢𝐧. 😇",
                 reply_markup=reply_markup,
@@ -104,8 +106,7 @@ async def nolink(client: Client,  message):
             )
              
             
-        info = await client.get_users(user_ids=message.from_user.id)
-        reference_id = int(message.chat.id)     
+             
         m = await client.send_message(
             chat_id=ADMIN,
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
