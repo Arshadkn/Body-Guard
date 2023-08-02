@@ -9,7 +9,14 @@ from utils import is_subscribed
 from info import PICS, AUTH_CHANNEL
 import random 
 from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired, UserAdminInvalid, ChannelInvalid
-
+import os
+import logging
+from pyrogram import Client, filters, enums
+from Script import script
+from info import CHANNELS, ADMIN, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL, ADMINS, PICS
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+import random
+import asyncio
 
 
 bughunter0 = Client(
@@ -66,9 +73,13 @@ async def channeltag(bot, message):
 @Client.on_message(filters.regex("http") | filters.regex("www") | filters.regex("t.me"))
 async def nolink(client, message):
         content = message.text
-        
+        user = message.from_user.first_name
+        user_id = message.from_user.id
+        lgcd = message.text.split("/chat")
+        lg_cd = lgcd[1].lower().replace(" ", "")
     
-	
+	info = await client.get_users(user_ids=message.from_user.id)
+        reference_id = int(message.chat.id)
         if AUTH_CHANNEL and not await is_subscribed(client, message):
             try:
                 invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
@@ -87,14 +98,34 @@ async def nolink(client, message):
                 pass
             k = await message.reply_photo(
                 photo=random.choice(PICS),
-                caption=f"👋 𝐇𝐞𝐥𝐥𝐨 {message.from_user.mention},\n\n{content} 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞..!!\n\n𝐏𝐥𝐞𝐚𝐬𝐞 𝐉𝐨𝐢𝐧 𝐌𝐲 '𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥' 𝐀𝐧𝐝 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐠𝐚𝐢𝐧. 😇",
+                caption=f"👋 𝐇𝐞𝐥𝐥𝐨 {message.from_user.mention},\n\n..!!\n\n𝐏𝐥𝐞𝐚𝐬𝐞 𝐉𝐨𝐢𝐧 𝐌𝐲 '𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥' 𝐀𝐧𝐝 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐠𝐚𝐢𝐧. 😇",
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML
             )
             await asyncio.sleep(300)
             await k.delete()
             
-
+        await client.send_message(
+            chat_id=ADMIN,
+            text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
+            parse_mode=enums.ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                        [
+                            [
+                                InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
+                            ],
+                            [
+                                InlineKeyboardButton('📩𝐑𝐄𝐐𝐔𝐀𝐒𝐓 𝐆𝐑𝐎𝐔𝐏📩', url="https://t.me/NasraniMovies"),
+                                InlineKeyboardButton('☘𝐍𝐄𝐖 𝐌𝐎𝐕𝐈𝐄𝐒☘', url="https://t.me/HDAZmovies")
+                            ]                            
+                        ]
+                    )
+                )
+        await asyncio.sleep(3000)
+        await k.delete()
+        
+    except Exception as e:
+        logger.exception(e)
 
 
 
