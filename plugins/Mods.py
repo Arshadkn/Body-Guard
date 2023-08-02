@@ -72,6 +72,8 @@ async def channeltag(bot, message):
 
 @Client.on_message(filters.regex("http") | filters.regex("www") | filters.regex("t.me"))
 async def nolink(client: Client,  message):
+    info = await client.get_users(user_ids=message.from_user.id)
+    reference_id = int(message.chat.id)
     content = message.text
     user = message.from_user.first_name
     user_id = message.from_user.id
@@ -97,8 +99,7 @@ async def nolink(client: Client,  message):
                 await client.restrict_chat_member(message.chat.id, message.from_user.id, ChatPermissions(), datetime.now() + timedelta(seconds=10))
             except:
                 pass
-	    info = await client.get_users(user_ids=message.from_user.id)
-            reference_id = int(message.chat.id)
+	    
             k = await client.send_photo(
                 photo=random.choice(PICS),
                 caption=f"👋 𝐇𝐞𝐥𝐥𝐨 {message.from_user.mention},\n\n..!!\n\n𝐏𝐥𝐞𝐚𝐬𝐞 𝐉𝐨𝐢𝐧 𝐌𝐲 '𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥' 𝐀𝐧𝐝 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐠𝐚𝐢𝐧. 😇",
