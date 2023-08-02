@@ -44,9 +44,7 @@ All Things are Simple To do. Follow The writings given Below.
 
 @Client.on_message(filters.command(["q"]))
 async def q_maker(_client, message):
-    if message.reply_to_message:
-        await message.edit("Reply to any users text message")
-        return
+    
     await message.edit("```Making a Quote```")
     await message.reply_to_message.forward("@QuotLyBot")
     is_sticker = False
