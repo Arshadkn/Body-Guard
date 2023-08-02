@@ -1,6 +1,9 @@
 from pyrogram import Client, Munni
 from utils import is_subscribed
 from info import AUTH_CHANNEL
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
+
+
 
 @Munni.on_callback_query()
 async def cb_handler(client, query):
