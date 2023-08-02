@@ -114,27 +114,27 @@ async def nolink(client: Client,  message):
              
             
              
-        m = await client.send_message(
-            chat_id=ADMIN,
-            text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
-            parse_mode=enums.ParseMode.HTML,
-            reply_markup=InlineKeyboardMarkup(
-                        [
+            m = await client.send_message(
+                chat_id=ADMIN,
+                text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
+                parse_mode=enums.ParseMode.HTML,
+                reply_markup=InlineKeyboardMarkup(
                             [
-                                InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
-                            ],
-                            [
-                                InlineKeyboardButton('📩𝐑𝐄𝐐𝐔𝐀𝐒𝐓 𝐆𝐑𝐎𝐔𝐏📩', url="https://t.me/NasraniMovies"),
-                                InlineKeyboardButton('☘𝐍𝐄𝐖 𝐌𝐎𝐕𝐈𝐄𝐒☘', url="https://t.me/HDAZmovies")
-                            ]                            
-                        ]
-                    )    
-                )
-        await asyncio.sleep(3000)
-        await m.delete()
+                                [
+                                    InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
+                                ],
+                                [
+                                    InlineKeyboardButton('📩𝐑𝐄𝐐𝐔𝐀𝐒𝐓 𝐆𝐑𝐎𝐔𝐏📩', url="https://t.me/NasraniMovies"),
+                                    InlineKeyboardButton('☘𝐍𝐄𝐖 𝐌𝐎𝐕𝐈𝐄𝐒☘', url="https://t.me/HDAZmovies")
+                                ]                            
+                            ]
+                        )    
+                    )
+                await asyncio.sleep(3000)
+                await m.delete()
         
-        except Exception as e:
-            logger.exception(e)
+            except Exception as e:
+                logger.exception(e)
 
 
 
