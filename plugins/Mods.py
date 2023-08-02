@@ -103,7 +103,7 @@ async def nolink(client: Client,  message):
             )
             await asyncio.sleep(300)
             await k.delete()
-	    return   
+#	    return   
         if message.from_user.id == ADMIN: 
             await reply_text(client, message)
             return
