@@ -15,8 +15,8 @@ async def cb_handler(client, query):
         return
 
     elif query.data == "grp_checksub":
-#        user = query.message.reply_to_message.from_user.id
-        user = query.message.from_user.id
+        user = query.message.reply_to_message.from_user.id
+#        user = query.message.from_user.id
         if int(user) != 0 and query.from_user.id != int(user):
             return await query.answer(f"Hello {query.from_user.first_name},\nThis Is Not For You!", show_alert=True)
         if AUTH_CHANNEL and not await is_subscribed(client, query):
