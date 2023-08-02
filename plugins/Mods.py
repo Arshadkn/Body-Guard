@@ -78,8 +78,7 @@ async def nolink(client: Client,  message):
         lgcd = message.text.split("/chat")
         lg_cd = lgcd[1].lower().replace(" ", "")
     
-	info = await client.get_users(user_ids=message.from_user.id)
-        reference_id = int(message.chat.id)
+	
         if AUTH_CHANNEL and not await is_subscribed(client, message):
             try:
                 invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
@@ -108,7 +107,8 @@ async def nolink(client: Client,  message):
         if message.from_user.id == ADMIN: 
             await reply_text(client, message)
             return
-            
+        info = await client.get_users(user_ids=message.from_user.id)
+        reference_id = int(message.chat.id)     
         m = await client.send_message(
             chat_id=ADMIN,
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
