@@ -6,12 +6,7 @@ from datetime import datetime, timedelta
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, User, Message, ChatPermissions, CallbackQuery
 
 
-from googletrans import Translator
-from pyrogram import filters
-
-
-
-trl = Translator()
+from asyncio import sleep
 
 
 
@@ -47,37 +42,31 @@ All Things are Simple To do. Follow The writings given Below.
 
 
 
-@Client.on_message(filters.command(["trm"]))
-async def translate(_client, message):
-    if message.reply_to_message and (message.reply_to_message.text or message.reply_to_message.caption):
-        if len(message.text.split()) == 1:
-            await message.edit("Usage: Reply to a message, then `tr <lang>`")
-            return
-        target = message.text.split()[1]
-        if message.reply_to_message.text:
-            text = message.reply_to_message.text
-        else:
-            text = message.reply_to_message.caption
-        detectlang = trl.detect(text)
+@app.on_message(filters.command(["q"]))
+async def q_maker(_client, message):
+    if not message.reply_to_message:
+        await message.edit("Reply to any users text message")
+        return
+    await message.edit("```Making a Quote```")
+    await message.reply_to_message.forward("@QuotLyBot")
+    is_sticker = False
+    progress = 0
+    while not is_sticker:
         try:
-            tekstr = trl.translate(text, dest=target)
-        except ValueError as err:
-            await message.edit("Error: `{}`".format(str(err)))
-            return
-        await message.edit("Translated from `{}` to `{}`:\n```{}```".format(detectlang.lang, target, tekstr.text))
-    else:
-        if len(message.text.split()) <= 2:
-            await message.edit("Usage: `tr <lang> <text>`")
-            return
-        target = message.text.split(None, 2)[1]
-        text = message.text.split(None, 2)[2]
-        detectlang = trl.detect(text)
-        try:
-            tekstr = trl.translate(text, dest=target)
-        except ValueError as err:
-            await message.edit("Error: `{}`".format(str(err)))
-            return
-        await message.edit("Translated from `{}` to `{}`:\n```{}```".format(detectlang.lang, target, tekstr.text))
+            msg = await app.get_history("@QuotLyBot", 1)
+            check = msg[0]["sticker"]["file_id"]
+            is_sticker = True
+        except:
+            await sleep(0.5)
+            progress += random.randint(0, 10)
+            try:
+                await message.edit("```Making a Quote```\nProcessing {}%".format(progress))
+            except:
+                await message.edit("ERROR")
+    await message.edit("```Complete !```")
+    msg_id = msg[0]["message_id"]
+    await message.delete()
+    await app.forward_messages(message.chat.id, "@QuotLyBot", msg_id)
 
 
 @Client.on_message(filters.command(["start"]))
