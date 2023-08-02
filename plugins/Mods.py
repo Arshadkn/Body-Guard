@@ -65,8 +65,8 @@ async def channeltag(bot, message):
 async def nolink(Client,message):
     try:
         await message.delete()
-    except:
-	return
+    
+	
     buttons = [[
                 InlineKeyboardButton("📢 Updates Channel 📢", url=invite_link.invite_link)
             ],[
