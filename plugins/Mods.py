@@ -4,7 +4,7 @@ import os
 from pyrogram import Client, filters, enums
 from pyrogram.types import Message, User
 from datetime import datetime, timedelta
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, User, Message, ChatPermissions, CallbackQuery
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, User, Message, ChatPermissions, CallbackQuery, ChatAdminRequired
 from utils import is_subscribed
 from info import PICS, AUTH_CHANNEL
 import random 
