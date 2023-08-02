@@ -106,13 +106,47 @@ async def nolink(client: Client,  message):
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML
             )
-            await asyncio.sleep(300)
+	    buttons = [[
+                InlineKeyboardButton("📢 Updates Channel 📢", url = k.link)
+            ],[
+                InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
+            ]]
+            reply_markup = InlineKeyboardMarkup(buttons)
+            m = await client.send_photo(
+		chat_id=ADMIN,
+                photo=random.choice(PICS),
+                caption=f"👋 𝐇𝐞𝐥𝐥𝐨 {message.from_user.mention},\n\n..!!\n\n𝐏𝐥𝐞𝐚𝐬𝐞 𝐉𝐨𝐢𝐧 𝐌𝐲 '𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥' 𝐀𝐧𝐝 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐠𝐚𝐢𝐧. 😇",
+                reply_markup=reply_markup,
+                parse_mode=enums.ParseMode.HTML
+            )
+            await asyncio.sleep(60)
             await k.delete()
             try:
                 await message.delete()
             except:
-                pass           
+                pass
+            return
+	message = message.text
+    buttons = [[
+        InlineKeyboardButton("📢 Updates Channel 📢", url = k.link)
+    ],[
+        InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
+    ]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+    m = await client.send_photo(
+	chat_id=ADMIN,
+        photo=random.choice(PICS),
+        caption=f"👋 𝐇𝐞𝐥𝐥𝐨 {message.from_user.mention},\n\n..!!\n\n𝐏𝐥𝐞𝐚𝐬𝐞 𝐉𝐨𝐢𝐧 𝐌𝐲 '𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥' 𝐀𝐧𝐝 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐠𝐚𝐢𝐧. 😇",
+        reply_markup=reply_markup,
+        parse_mode=enums.ParseMode.HTML
+    )
+     
             
+
+
+
+
+
 
 
 
