@@ -5,7 +5,7 @@ from pyrogram.types import Message, User
 from datetime import datetime, timedelta
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, User, Message, ChatPermissions, CallbackQuery
 from utils import is_subscribed
-
+from info import PICS
 
 
 
