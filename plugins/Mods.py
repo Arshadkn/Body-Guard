@@ -51,7 +51,7 @@ All Things are Simple To do. Follow The writings given Below.
 
 
 
-@Client.on_message(filters.command(["reverse"])
+@Client.on_message(filters.command(["reverse"]))
 async def google_rs(client, message):
     start = datetime.now()
     dis_loc = ''
