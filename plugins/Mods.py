@@ -50,7 +50,7 @@ invite_link = "https://t.me/testpubliconly"
 
 @Client.on_message(filters.group)
 async def mchat(bot, message):
-   await message_reply(chat_id=message.chat.id, set_chat_protected_content=True)
+   await set_chat_protected_content(message.chat.id, True)
 
 
 
