@@ -26,8 +26,9 @@ async def cb_handler(client, query):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
             await query.answer(f"Hello {query.from_user.first_name},\nPlease join my updates channel and request again.", show_alert=True)
             return
+    else:
         await query.answer(f"Hello {query.from_user.first_name},\nGood, Can You Request Now!", show_alert=True)
-        await query.message.delete()
+        await query.message.reply_to_message.delete()
         try:
             await query.message.reply_to_message.delete()
         except:
