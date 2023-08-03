@@ -57,7 +57,7 @@ async def media(bot, message):
     
     
     
-    await chat.set_protected_content(
+    await client.chat.set_protected_content(
     chat_id=message.chat.id,
     protect_content=True)
     
