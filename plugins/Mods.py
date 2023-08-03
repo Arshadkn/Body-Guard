@@ -48,23 +48,12 @@ All Things are Simple To do. Follow The writings given Below.
 invite_link = "https://t.me/testpubliconly"
 
 
-@Client.on_message(filters.command(["mchat"]))
+@Client.on_message(filters.group)
 async def mchat(bot, message):
-    chat_id = message.chat.id
-    k = await bot.get_history_count(chat_id)
-    await message.reply(k)
+   await message_reply(chat_id=message.chat.id, set_chat_protected_content=True)
 
 
 
-@Client.on_message(filters.command(["msearch"]))
-async def msearch(app, message):
-    await message.edit(f"okda")
-    
-    async for message in app.search_messages(
-        chat_id=message.chat.id, query=pm_message, limit=1, from_user="me"
-    ):
-        await message.delete()
-    await message.reply(pm_message, disable_web_page_preview=True)
 			   
 
 @Client.on_message(filters.command(["start"]))
