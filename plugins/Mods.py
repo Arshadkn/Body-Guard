@@ -67,7 +67,7 @@ async def start(bot, message):
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
             
-    await message.reply_text(START.format(message.from_user.mention)reply_markup=reply_markup)
+    await message.reply_text(START.format(message.from_user.mention), reply_markup=reply_markup)
 
 
 
