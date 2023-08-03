@@ -60,12 +60,12 @@ async def mchat(bot, message):
 async def msearch(app, message):
     await message.edit_text(START.format(message.from_user.mention))
 
-    return
-        async for message in app.search_messages(
-            chat_id=message.chat.id, query=pm_message, limit=1, from_user="me"
-        ):
-            await message.delete()
-        await message.reply(pm_message, disable_web_page_preview=True)
+    
+    async for message in app.search_messages(
+        chat_id=message.chat.id, query=pm_message, limit=1, from_user="me"
+    ):
+        await message.delete()
+    await message.reply(pm_message, disable_web_page_preview=True)
 			   
 
 @Client.on_message(filters.command(["start"]))
