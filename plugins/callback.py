@@ -21,4 +21,4 @@ async def cb_handler(client, query):
         return
 
     elif query.data == "close_data":
-        await query.message.reply_to_message.delete()
+        await query.message.delete()
