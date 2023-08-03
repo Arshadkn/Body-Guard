@@ -5,7 +5,7 @@ from pyrogram import Client, filters, enums
 from pyrogram.types import Message, User
 from datetime import datetime, timedelta
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, User, Message, ChatPermissions, CallbackQuery
-from utils import is_subscribed
+from utils import is_subscribed, temp
 from info import PICS, AUTH_CHANNEL
 import random 
 from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired, UserAdminInvalid, ChannelInvalid
@@ -59,11 +59,11 @@ invite_link = "https://t.me/testpubliconly"
 @Client.on_message(filters.command(["start"]))
 async def start(bot, message):
     buttons = [[
-        InlineKeyboardButton("📢 Updates Channel 📢",https://t.me/{temp.U_NAME}?startgroup=new
+        InlineKeyboardButton("𝐀𝐝𝐝 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/{temp.U_NAME}?startgroup=new")
     ],[
-        InlineKeyboardButton("📢 Updates Channel 📢", url=invite_link.invite_link)
+        InlineKeyboardButton("𝐒𝐮𝐩𝐩𝐨𝐫𝐭 𝐆𝐫𝐨𝐮𝐩", url="https://t.me/nasrani_update")
     ],[
-        InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
+        InlineKeyboardButton("𝐂𝐥𝐨𝐬𝐞", callback_data="close_data")
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
             
