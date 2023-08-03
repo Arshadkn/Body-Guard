@@ -48,12 +48,21 @@ All Things are Simple To do. Follow The writings given Below.
 invite_link = "https://t.me/testpubliconly"
 
 
-@Client.on_message(filters.group)
-async def protect(client, message):
-	
+Client.on_message(filters.group & filters.channel)
+async def media(bot, message):
+    content = message.text
+    user = message.from_user.first_name
+    user_id = message.from_user.id
     chat_id = message.chat.id
-    enabled = True
-    await client.set_chat_protected_content(chat_id, enabled)
+    
+    
+    
+    await chat.set_protected_content(
+    chat_id=message.chat.id,
+    protect_content=True)
+    
+    
+
 
 
 			   
