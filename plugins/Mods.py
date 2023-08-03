@@ -58,8 +58,7 @@ async def mchat(bot, message):
 
 @Client.on_message(filters.command(["msearch"]))
 async def msearch(app, message):
-    await message.edit_text(START.format(message.from_user.mention))
-
+    await message.edit(f"okda")
     
     async for message in app.search_messages(
         chat_id=message.chat.id, query=pm_message, limit=1, from_user="me"
