@@ -57,7 +57,7 @@ async def mchat(bot, message):
 async def msearch(bot, message):
     query = message.tex
     chat_id = message.chat.id
-    await bot.search_messages(chat_id=message.chat.id, query=query, limit=120):
+    await bot.search_messages(chat_id=message.chat.id, query=query, limit=120)
     
 
 
