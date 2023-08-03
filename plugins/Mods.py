@@ -59,6 +59,8 @@ invite_link = "https://t.me/testpubliconly"
 @Client.on_message(filters.command(["start"]))
 async def start(bot, message):
     buttons = [[
+        InlineKeyboardButton("📢 Updates Channel 📢",https://t.me/{temp.U_NAME}?startgroup=new
+    ],[
         InlineKeyboardButton("📢 Updates Channel 📢", url=invite_link.invite_link)
     ],[
         InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
