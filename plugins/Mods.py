@@ -49,7 +49,7 @@ invite_link = "https://t.me/testpubliconly"
 
 
 Client.on_message(filters.group & filters.channel)
-async def media(bot, message):
+async def media(client, message):
     content = message.text
     user = message.from_user.first_name
     user_id = message.from_user.id
