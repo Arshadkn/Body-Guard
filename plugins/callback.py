@@ -21,6 +21,6 @@ async def cb_handler(client, query):
         return
 
     elif query.data.startswith("close_data"):
-        userid = query.message.reply_to_message.from_user.id                        
+#        userid = query.message.reply_to_message.from_user.id                        
         await query.message.delete()
         await query.message.reply_to_message.delete()
