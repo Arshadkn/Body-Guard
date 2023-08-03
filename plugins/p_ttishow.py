@@ -11,81 +11,9 @@ import asyncio
 
 """-----------------------------------------https://t.me/GetTGLink/4179 --------------------------------------"""
 
-@Client.on_message(filters.new_chat_members & filters.group)
-async def save_group(bot, message):
-    r_j_check = [u.id for u in message.new_chat_members]
-    if temp.ME in r_j_check:
-        if not await db.get_chat(message.chat.id):
-            total=await bot.get_chat_members_count(message.chat.id)
-            r_j = message.from_user.mention if message.from_user else "Anonymous" 
-            await bot.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, r_j))       
-            await db.add_chat(message.chat.id, message.chat.title)
-        if message.chat.id in temp.BANNED_CHATS:
-            # Inspired from a boat of a banana tree
-            buttons = [[
-                InlineKeyboardButton('Support', url=f'https://t.me/{SUPPORT_CHAT}')
-            ]]
-            reply_markup=InlineKeyboardMarkup(buttons)
-            k = await message.reply(
-                text='<b>CHAT NOT ALLOWED 🐞\n\nMy admins has restricted me from working here ! If you want to know more about it contact support..</b>',
-                reply_markup=reply_markup,
-            )
-            await message.delete()
-
-            try:
-                await k.pin()
-            except:
-                pass
-            await bot.leave_chat(message.chat.id)
-            return
-        buttons = [[
-                    InlineKeyboardButton('📣 Uᴘᴅᴀᴛᴇs', url='https://t.me/nasrani_update'),
-                    InlineKeyboardButton('❓ Hᴇʟᴘ', url=f"https://t.me/{temp.U_NAME}?start=help")
-                  ]]
-        reply_markup=InlineKeyboardMarkup(buttons)
-        await message.reply_text(
-            text=f"<b>Thankyou For Adding Me In {message.chat.title} ❣️\n\nIf you have any questions & doubts about using me contact support.</b>",
-            reply_markup=reply_markup)
-        await message.delete()
-    else:
-        count = await bot.get_chat_members_count(message.chat.id)
-        settings = await get_settings(message.chat.id)
-        user_id = message.from_user.id
-        if settings["welcome"]:
-            for u in message.new_chat_members:
-                if (temp.MELCOW).get('welcome') is not None:
-                    try:
-                        await (temp.MELCOW['welcome']).delete()
-                    except:
-                        pass
-                temp.MELCOW['welcome'] = await bot.send_video(
-                                                 chat_id=message.chat.id,
-                                                 video=(MELCOW_VID),
-                                                 caption=f"𝐇𝐞𝐥𝐥𝐨: {u.mention} \n 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 {message.chat.title} \n𝐘𝐨𝐮𝐫 𝐈𝐝: {message.from_user.id} \n𝐘𝐨𝐮𝐫 𝐀𝐝𝐦𝐢𝐬𝐬𝐢𝐨𝐧 𝐍𝐨: {count}",
-#                                                 caption=f"Hello {u.mention}  {temp.U_NAME} ❤️ {message.from_user.last_name} ❤️group {message.chat.title} Count {count}",
-                                                 reply_markup=InlineKeyboardMarkup(
-                                                                         [[
-                                                                           InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
-                                                                           InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                                                                        ],[
-                                                                           InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/bigmoviesworld")
-                                                                         ]]
-                                                 ),
-#                                                 parse_mode=enums.ParseMode.MARKDOWN
-                )
-        await message.delete()       
-        if settings["auto_delete"]:
-            await asyncio.sleep(600)
-            await (temp.MELCOW['welcome']).delete()
             
                 
-@Client.on_message(filters.left_chat_member)
-async def end(bot, message):
-    count = await bot.get_chat_members_count(message.chat.id)
-    settings = await get_settings(message.chat.id)
-    if settings["welcome"]:    
-        await bot.send_message(chat_id=message.chat.id, text=f"𝐇𝐞𝐥𝐥𝐨: {message.from_user.mention}😞 \n 𝐁𝐲 𝐁𝐲... {message.chat.title} \n𝐘𝐨𝐮𝐫 𝐈𝐝: {message.from_user.id} \n𝐓𝐨𝐭𝐚𝐥 𝐆𝐫𝐨𝐮𝐩 𝐌𝐞𝐦𝐛𝐞𝐫𝐬: {count}")
-        await message.delete()     
+     
 
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
