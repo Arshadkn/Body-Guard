@@ -48,18 +48,7 @@ All Things are Simple To do. Follow The writings given Below.
 invite_link = "https://t.me/testpubliconly"
 
 
-Client.on_message(filters.group & filters.channel)
-async def media(client, message):
-    content = message.text
-    user = message.from_user.first_name
-    user_id = message.from_user.id
-    chat_id = message.chat.id
-    
-    
-    
-    await client.chat.set_protected_content(
-    chat_id=message.chat.id,
-    protect_content=True)
+
     
     
 
@@ -69,8 +58,14 @@ async def media(client, message):
 
 @Client.on_message(filters.command(["start"]))
 async def start(bot, message):
-    
-    await message.reply_text(START.format(message.from_user.mention))
+    buttons = [[
+        InlineKeyboardButton("📢 Updates Channel 📢", url=invite_link.invite_link)
+    ],[
+        InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
+    ]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+            
+    await message.reply_text(START.format(message.from_user.mention)reply_markup=reply_markup)
 
 
 
