@@ -49,12 +49,16 @@ invite_link = "https://t.me/testpubliconly"
 
 
 @Client.on_message(filters.command(["mchat"]))
-async def start(bot, message):
+async def mchat(bot, message):
     chat_id = message.chat.id
     await bot.get_history_count(chat_id=messege.chat.id)
 
-
-
+@Client.on_message(filters.command(["msearch"]))
+async def msearch(bot, message):
+    query = message.tex
+    chat_id = message.chat.id
+    await bot.search_messages(chat_id=message.chat.id, query=query, limit=120):
+    
 
 
 @Client.on_message(filters.command(["start"]))
