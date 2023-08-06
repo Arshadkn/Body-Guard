@@ -13,3 +13,5 @@ pytz
 aiohttp
 googletrans==3.1.0a0
 dnspython==2.3.0
+
+python-dotenv
