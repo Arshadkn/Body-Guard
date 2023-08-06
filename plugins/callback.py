@@ -29,8 +29,8 @@ Bot = Client(
 )
 
 
-@Client.on_message(filters.private & filters.command(["img"]))
 
+@Client.on_callback_query()
 async def cb_handler(client, query):
 
     if query.data == "grp_checksub":
@@ -54,22 +54,20 @@ async def cb_handler(client, query):
 
 
 
-@Bot.on_inline_query()
-async def search(bot, update):
+@Client.on_message(filters.private & filters.command(["img"]))
+async def searchimage(bot, message):
     
     results = requests.get(
-        API + requests.utils.requote_uri(update.query)
+        API + requests.utils.requote_uri(update.message)
     ).json()["result"][:50]
     
-    answers = []
     for result in results:
-        answers.append(
-            InlineQueryResultPhoto(
-                title=update.query.capitalize(),
-                description=result,
-                caption="Made by @FayasNoushad",
-                photo_url=result
-            )
-        )
+        
+        title=update.message.capitalize(),
+        description=result,
+        caption="Made by @FayasNoushad",
+        photo_url=result
+            
+        
     
-    await update.answer(answers)
+    await message.reply_photo(photo_url=result)
