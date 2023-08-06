@@ -58,18 +58,12 @@ async def cb_handler(client, query):
 async def searchimage(client, message):
     try:
        args = message.text.split(None, 1)[1]
-    except:
-        return await message.reply("/svideo requires an argument.")
-    if args.startswith(" "):
-        await message.reply("/svideo requires an argument.")
-        return ""
+    
     pak = await message.reply('Downloading...')
     try:
-        photo = requests.get(f"https://apibu.herokuapp.com/api/y-images?query={args}&page=1&limit=1").json()
+        r = requests.get(f"https://apibu.herokuapp.com/api/y-images?query={args}&page=1&limit=1").json()
+        slink = r['data']['results'][0]['downloadUrl'][4]['link']
     
-    except Exception as e:
-        await pak.edit(str(e))
-        return
-     
     
-        await message.reply_photo(photo=photo)
+    
+        await message.reply_message(slink)
