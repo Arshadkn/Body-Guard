@@ -58,7 +58,7 @@ async def cb_handler(client, query):
 async def searchimage(bot, message):
     
     results = requests.get(
-        API + requests.utils.requote_uri(message)
+        API + requests.utils.requote_uri(message.reply_to_message.id)
     ).json()["result"][:50]
     
     for result in results:
