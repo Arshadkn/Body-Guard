@@ -65,8 +65,9 @@ async def searchimage(client, message):
         return ""
     pak = await message.reply('Downloading...')
     try:
+        message = {message.text}
         args = message.text.split(None, 1)[1]
-        results = requests.get("API + requests.utils.requote_uri={args}&page=1&limit=1").json()
+        results = requests.get("API + requests.utils.requote_uri={args}").json()
         slink = r['data']['results'][0]['downloadUrl'][4]['link']  
         title=message.query.capitalize()
     except Exception as e:
