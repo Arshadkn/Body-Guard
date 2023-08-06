@@ -58,16 +58,16 @@ async def cb_handler(client, query):
 async def searchimage(bot, message):
     
     results = requests.get(
-        API + requests.utils.requote_uri(message.reply_to_message.id)
+        API + requests.utils.requote_uri(client, message)
     ).json()["result"][:1]
     
     for result in results:
         
-        title=update.query.capitalize(),
-        description=result,
-        caption="Made by @FayasNoushad",
-        photo_url=result
+#        title=update.query.capitalize(),
+#        description=result,
+#        caption="Made by @FayasNoushad",
+#        photo_url=result
             
         
     
-    await message.reply_photo(photo_url=result)
+        await message.reply_photo(photo_url=result)
