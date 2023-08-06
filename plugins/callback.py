@@ -12,7 +12,6 @@ from pyrogram.types import *
 
 
 load_dotenv()
-API = "https://api.abirhasan.wtf/google?query="
 API = "https://apibu.herokuapp.com/api/y-images?query="
 
 JOIN_BUTTON = [
@@ -30,7 +29,8 @@ Bot = Client(
 )
 
 
-@Client.on_callback_query()
+@Client.on_message(filters.private & filters.command(["img"]))
+
 async def cb_handler(client, query):
 
     if query.data == "grp_checksub":
@@ -54,12 +54,13 @@ async def cb_handler(client, query):
 
 
 
-@Client.on_inline_query()
-async def inline(bot, update)
+@Bot.on_inline_query()
+async def search(bot, update):
+    
     results = requests.get(
         API + requests.utils.requote_uri(update.query)
     ).json()["result"][:50]
-    results = google(update.query)
+    
     answers = []
     for result in results:
         answers.append(
@@ -69,39 +70,6 @@ async def inline(bot, update)
                 caption="Made by @FayasNoushad",
                 photo_url=result
             )
-        ),
-            InlineQueryResultArticle(
-                title=result["title"],
-                description=result["description"],
-                input_message_content=InputTextMessageContent(
-                    message_text=result["text"],
-                    disable_web_page_preview=True
-                ),
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [InlineKeyboardButton(text="Link", url=result["link"])],
-                        JOIN_BUTTON
-                    ]
-                )
-            )
-#        )
-    await update.answer(answers)
-
-
-def google(query):
-    r = requests.get(API + requote_uri(query))
-    informations = r.json()["results"][:50]
-    results = []
-    for info in informations:
-        text = f"**Title:** `{info['title']}`"
-        text += f"\n**Description:** `{info['description']}`"
-        text += f"\n\nMade by @FayasNoushad"
-        results.append(
-            {
-                "title": info['title'],
-                "description": info['description'],
-                "text": text,
-                "link": info['link']
-            }
         )
-    return results
+    
+    await update.answer(answers)
