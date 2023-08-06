@@ -65,18 +65,11 @@ async def searchimage(client, message):
         return ""
     pak = await message.reply('Downloading...')
     try:
-        results = requests.get(f"https://apibu.herokuapp.com/api/y-images?query={args}&page=1&limit=1").json()
+        photo = requests.get(f"https://apibu.herokuapp.com/api/y-images?query={args}&page=1&limit=1").json()
     
     except Exception as e:
         await pak.edit(str(e))
         return
-    for result in results:
-        
-#        title=update.query.capitalize(),
-#        description=result,
-#        caption="Made by @FayasNoushad",
-        photo_url=result
-        img = r['data']['results'][0]['image'][2]['link']       
-        
+     
     
-        await message.reply_photo(photo=result)
+        await message.reply_photo(photo=photo)
