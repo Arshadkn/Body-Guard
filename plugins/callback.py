@@ -72,13 +72,13 @@ async def searchimage(client, message):
 
     
 # except Exception as e:
- #   for result in results:
+    for result in results:
         
 #        title=update.query.capitalize(),
 #        description=result,
 #        caption="Made by @FayasNoushad",
-    photo_url=result
-    img = r['data']['results'][0]['image'][2]['link']       
+        photo_url=result
+        img = r['data']['results'][0]['image'][2]['link']       
         
     
-    await message.reply_photo(photo_url=img)
+        await message.reply_photo(photo=result)
