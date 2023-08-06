@@ -57,13 +57,7 @@ async def cb_handler(client, query):
 @Client.on_message(filters.private & filters.command(["img"]))
 async def searchimage(client, message):
     try:
-       args = message.text.split(None, 1)[1]
-    
-    pak = await message.reply('Downloading...')
-    try:
+        args = message.text.split(None, 1)[1]
         r = requests.get(f"https://apibu.herokuapp.com/api/y-images?query={args}&page=1&limit=1").json()
-        slink = r['data']['results'][0]['downloadUrl'][4]['link']
-    
-    
-    
+        slink = r['data']['results'][0]['downloadUrl'][4]['link']    
         await message.reply_message(slink)
