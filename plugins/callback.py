@@ -55,7 +55,7 @@ async def cb_handler(client, query):
 
 
 @Client.on_message(filters.private & filters.command(["img"]))
-async def searchimage(bot, message):
+async def searchimage(client, message):
     
     results = requests.get(
         API + requests.utils.requote_uri(client, message)
