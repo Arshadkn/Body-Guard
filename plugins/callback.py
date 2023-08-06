@@ -65,8 +65,8 @@ async def searchimage(client, message):
         return ""
     pak = await message.reply('Downloading...')
     try:
-        r = requests.get(f"https://apibu.herokuapp.com/api/y-images?query={args}&page=1&limit=1").json()
-    except Exception as e:
+        results = requests.get(f"https://apibu.herokuapp.com/api/y-images?query={args}&page=1&limit=1").json()
+    
         await pak.edit(str(e))
         return    
 
